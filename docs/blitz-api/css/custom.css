@@ -1,0 +1,405 @@
+/* Optional: add border or padding to make it more noticeable */
+h4 {
+  border-left: 4px solid #003063;
+  padding-left: 8px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+/* ── Table Header Styling (matches indigo top bar) ─────────────────────── */
+.md-typeset table:not([class]) th {
+  background-color: #3f51b5;
+  /* MkDocs Material indigo primary */
+  color: #ffffff;
+  /* white text for contrast          */
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-bottom: 3px solid #003063;
+  /* dark navy accent line            */
+  padding: 10px 14px;
+}
+
+/* Round the corners of the first and last header cells */
+.md-typeset table:not([class]) th:first-child {
+  border-radius: 6px 0 0 0;
+}
+
+.md-typeset table:not([class]) th:last-child {
+  border-radius: 0 6px 0 0;
+}
+
+/* Subtle zebra striping on body rows */
+.md-typeset table:not([class]) tr:nth-child(even) td {
+  background-color: rgba(63, 81, 181, 0.05);
+  /* very light indigo tint */
+}
+
+/* Hover highlight on rows */
+.md-typeset table:not([class]) tbody tr:hover td {
+  background-color: rgba(63, 81, 181, 0.10);
+  transition: background-color 0.15s ease;
+}
+
+/* General table polish */
+.md-typeset table:not([class]) {
+  border-radius: 6px;
+  overflow: hidden;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset table:not([class]) td {
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(63, 81, 181, 0.15);
+}
+
+/* Keep field names and code values on one line inside tables */
+.md-typeset table:not([class]) code {
+  white-space: nowrap;
+}
+
+/* Let very wide tables scroll horizontally instead of wrapping */
+.md-typeset table:not([class]) {
+  display: block;
+  overflow-x: auto;
+}
+
+/* ── Typography Enhancements ────────────────────────────── */
+.md-typeset {
+  line-height: 1.65;
+  font-size: 0.75rem; /* Decreased font size (default is 0.8rem) */
+}
+
+.md-typeset p {
+  margin-bottom: 1.2em;
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+/* Headings: Black */
+.md-typeset h1, .md-typeset h2 {
+  color: #000000;
+}
+
+/* Subheadings: Dark Grey */
+.md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  color: #4a4a4a;
+}
+
+/* Optional: Dark mode compatibility */
+[data-md-color-scheme="slate"] .md-typeset h1, 
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  color: #ffffff;
+}
+[data-md-color-scheme="slate"] .md-typeset h3, 
+[data-md-color-scheme="slate"] .md-typeset h4, 
+[data-md-color-scheme="slate"] .md-typeset h5, 
+[data-md-color-scheme="slate"] .md-typeset h6 {
+  color: #b0b0b0;
+}
+
+/* ── Content Right Separator Line ────────────────────────────── */
+@media screen and (min-width: 1220px) {
+  .md-content {
+    /* Made line thicker (3px) and colored it a subtle indigo */
+    border-right: 3px solid rgba(63, 81, 181, 0.2); 
+    padding-right: 2rem;
+  }
+}
+
+/* ── Section Separators ────────────────────────────── */
+.md-typeset h2 {
+  border-bottom: 1px solid rgba(63, 81, 181, 0.15);
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+  margin-top: 1.5em;
+}
+
+.md-typeset h3 {
+  border-bottom: 1px dashed rgba(63, 81, 181, 0.1);
+  padding-bottom: 0.3em;
+}
+
+/* ── Consistent Note & Information Boxes ────────────────────────────── */
+/* ── Consistent Note & Information Boxes ────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset blockquote {
+  border: 1px solid rgba(63, 81, 181, 0.15) !important;
+  border-left: 4px solid #3f51b5 !important; /* Uniform brand indigo */
+  border-radius: 8px !important;
+  background-color: rgba(63, 81, 181, 0.03) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+  margin: 1.5em 0 !important;
+  overflow: hidden;
+  
+  /* Force all boxes to use the clean 'info' circle icon instead of the confusing pencil/fire icon */
+  --md-admonition-icon: var(--md-admonition-icon--info) !important;
+}
+
+/* Ensure blockquotes have proper padding since they lack titles */
+.md-typeset blockquote {
+  padding: 0.75rem 1rem;
+}
+
+/* Unify the title bar for admonitions and remove icons entirely */
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: rgba(63, 81, 181, 0.04) !important;
+  border-bottom: 1px solid rgba(63, 81, 181, 0.08) !important;
+  color: #003063 !important;
+  font-weight: 700 !important;
+  padding: 0.75rem 1rem !important; /* Restored normal padding */
+}
+
+/* Remove the icon symbol */
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  display: none !important;
+}
+
+/* Content spacing inside the boxes */
+.md-typeset .admonition > p,
+.md-typeset .admonition > ul,
+.md-typeset .admonition > ol {
+  padding: 0.75rem 1rem !important;
+  margin: 0 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition-title {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ── Curved Search Bar ────────────────────────────── */
+.md-search__input,
+.md-search__form,
+.md-search__inner {
+  border-radius: 24px !important;
+}
+
+/* ── Fix Left Sidebar Scroll ────────────────────────────── */
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+
+/* ── Full Width Layout ────────────────────────────── */
+/* Ensures sidebars don't leave their places at the edges when zooming out */
+.md-grid {
+  max-width: 100%;
+}
+
+/* ── Purple Note Box ────────────────────────────── */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  background-color: #f3e5f5 !important;
+  border: 1px solid #ce93d8 !important;
+  border-left: 4px solid #8e24aa !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  padding: 0.25rem 0 0.5rem 0 !important;
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  color: #4a148c !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+.md-typeset .note > .admonition-title::before {
+  background-color: #8e24aa !important;
+}
+
+.md-typeset .note p,
+.md-typeset .note li,
+.md-typeset .note ul {
+  color: #2d0a40 !important;
+  font-size: 0.78rem !important;
+  line-height: 1.65 !important;
+  padding: 0 1rem !important;
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  font-size: 1rem !important;  /* increase this value to make it bigger */
+}
+
+/* ── Red Warning Box ────────────────────────────── */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  background-color: #fff5f5 !important;
+  border: 1px solid #ffcdd2 !important;
+  border-left: 4px solid #e53935 !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  padding: 0.25rem 0 0.5rem 0 !important;
+}
+
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  color: #7f0000 !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+.md-typeset .warning > .admonition-title::before {
+  background-color: #e53935 !important;
+}
+
+.md-typeset .warning p,
+.md-typeset .warning li,
+.md-typeset .warning ul {
+  color: #4a1010 !important;
+  font-size: 0.78rem !important;
+  line-height: 1.65 !important;
+  padding: 0 1rem !important;
+}
+
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  font-size: 1rem !important;  /* increase this value to make it bigger */
+}
+
+/* ── Green Tip Box ────────────────────────────── */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  background-color: #e8f5e9 !important;
+  border: 1px solid #a5d6a7 !important;
+  border-left: 4px solid #2e7d32 !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  padding: 0.25rem 0 0.5rem 0 !important;
+}
+
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  color: #1b5e20 !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+.md-typeset .tip > .admonition-title::before {
+  background-color: #2e7d32 !important;
+}
+
+.md-typeset .tip p,
+.md-typeset .tip li,
+.md-typeset .tip ul {
+  color: #1b3a1f !important;
+  font-size: 0.78rem !important;
+  line-height: 1.65 !important;
+  padding: 0 1rem !important;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  font-size: 1rem !important;  /* increase this value to make it bigger */
+}
+
+/* ── Upstox-style Card Grid ────────────────────────── */
+.md-typeset .grid.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+.md-typeset .grid.cards > ul {
+  display: contents;
+}
+
+.md-typeset .grid.cards > ul > li {
+  list-style: none;
+  border: 1px solid rgba(63, 81, 181, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 16px rgba(63, 81, 181, 0.12);
+  border-color: rgba(63, 81, 181, 0.4);
+}
+
+.md-typeset .grid.cards > ul > li > p:first-child {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.md-typeset .grid.cards > ul > li > p:first-child svg,
+.md-typeset .grid.cards > ul > li > p:first-child img {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.md-typeset .grid.cards > ul > li > p:first-child strong {
+  font-weight: 700;
+}
+
+.md-typeset .grid.cards > ul > li > p:nth-child(2) {
+  color: #4a4a4a;
+  font-size: 0.8rem;
+  margin: 0 0 0.75rem;
+  flex: 1;
+}
+
+.md-typeset .grid.cards > ul > li > p:last-child {
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.md-typeset .grid.cards > ul > li > p:last-child a {
+  color: #3f51b5;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.md-typeset .grid.cards > ul > li > p:last-child a:hover {
+  text-decoration: underline;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li > p:first-child {
+  color: #fff;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li > p:nth-child(2) {
+  color: #b0b0b0;
+}

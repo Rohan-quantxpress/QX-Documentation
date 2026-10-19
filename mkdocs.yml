@@ -1,0 +1,110 @@
+
+site_name: QX Documentation
+site_description: Unified QX / Blitz Trader documentation
+copyright: © QuantXpress
+
+theme:
+  name: material
+  font:
+    text: Outfit
+    code: Fira Code
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - md_in_html
+  - toc:
+      permalink: false
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji
+
+extra_css:
+  - stylesheets/extra.css
+  - blitz-api/css/custom.css
+  - strategy-json/styles/extra.css
+  - strategy-data/stylesheets/extra.css
+  - basket-trading/stylesheets/extra.css
+  - bod-eod/docs.css
+  - system-report/stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Strategy JSON:
+      - Overview: strategy-json/index.md
+  - Strategy Data Management:
+      - Strategy Data Management:
+          - Introduction: strategy-data/strategy-data-management/index.md
+          - Database to JSON: strategy-data/strategy-data-management/database-to-json.md
+          - JSON to Strategies: strategy-data/strategy-data-management/json-to-strategies.md
+          - JSON to Signal Strategies: strategy-data/strategy-data-management/json-to-signal-strategies.md
+  - Basket Trading:
+      - Overview: basket-trading/index.md
+  - BOD / EOD:
+      - Introduction: bod-eod/introduction.md
+      - Project Overview: bod-eod/project-overview.md
+      - Process Master: bod-eod/process_master.md
+      - Process JSON: bod-eod/process_json.md
+      - Adding New File to BOD: bod-eod/adding-new-file.md
+      - BOD / EOD Scripts:
+          - BOD:
+              - Overview: bod-eod/bod-eod/bod/index.md
+              - NSE Most Active: bod-eod/bod-eod/bod/nse-most-active.md
+              - Download Banned Instruments: bod-eod/bod-eod/bod/download_banned_instruments.md
+              - Download Contract Master: bod-eod/bod-eod/bod/download_contract_master.md
+              - Download FTP: bod-eod/bod-eod/bod/ftp_downloader.md
+              - NSE Span Downloader: bod-eod/bod-eod/bod/nse_span_downloader.md
+              - Store Adapter Info: bod-eod/bod-eod/bod/store_adapter_info.md
+              - Upload Cash Margin: bod-eod/bod-eod/bod/upload_cash_margin.md
+              - Upload Holdings: bod-eod/bod-eod/bod/upload_Holding_positions.md
+              - Upload Nifty Indices: bod-eod/bod-eod/bod/nifty-index-db-update.md
+              - Upload F&O Positions: bod-eod/bod-eod/bod/position-holding-upload.md
+              - Checksum Tracker: bod-eod/bod-eod/bod/checksum-tracker.md
+              - Copy Files Source to Destination: bod-eod/bod-eod/bod/file-directory-copy.md
+              - Instrument Master: bod-eod/bod-eod/bod/nse-instrument-parser.md
+              - Upload Daily Signal Strategies: bod-eod/bod-eod/bod/signal-strategy-dailies-upload.md
+              - Import Users: bod-eod/bod-eod/bod/import-users.md
+          - EOD:
+              - Bhavcopy: bod-eod/bod-eod/eod/bhavcopy.md
+              - DB Backup: bod-eod/bod-eod/eod/db_backup.md
+              - Redis Backup: bod-eod/bod-eod/eod/redis_backup.md
+              - DB Cleanup: bod-eod/bod-eod/eod/database-table-cleanup.md
+              - Strategy Statistics IV Cleanup: bod-eod/bod-eod/eod/strategy-statistics-dynamic-iv-cleanup.md

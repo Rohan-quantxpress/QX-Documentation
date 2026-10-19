@@ -1,0 +1,385 @@
+
+/* =========================================================
+   QX Documentation — Corporate Typography & UI
+   Compact headings, consistent fonts, cards and diagrams
+   ========================================================= */
+
+/* 1. Theme Variables */
+:root {
+  --qx-primary: #2457a7;
+  --qx-primary-hover: #194785;
+  --qx-heading: #172b4d;
+  --qx-text: #263449;
+  --qx-muted: #64748b;
+  --qx-border: #e2e8f0;
+  --qx-surface: #ffffff;
+  --qx-surface-hover: #f8faff;
+
+  --qx-font-body: "Outfit", Arial, sans-serif;
+  --qx-font-code: "Fira Code", "Cascadia Mono", Consolas, monospace;
+}
+
+/* 2. Global Typography */
+.md-typeset {
+  color: var(--qx-text);
+  font-family: var(--qx-font-body);
+  font-size: 0.76rem;
+  line-height: 1.7;
+}
+
+.md-content {
+  color: var(--qx-text);
+}
+
+/* Consistent, compact heading sizes */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6,
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+  color: var(--qx-heading);
+  font-family: var(--qx-font-body);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+/* Page title */
+.md-typeset h1,
+.md-content h1 {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Main section headings */
+.md-typeset h2,
+.md-content h2 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.65rem;
+  font-size: 1.12rem;
+  font-weight: 650;
+}
+
+/* Subsection headings */
+.md-typeset h3,
+.md-content h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.98rem;
+  font-weight: 650;
+}
+
+/* Fourth-level headings */
+.md-typeset h4,
+.md-content h4 {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+/* Fifth- and sixth-level headings */
+.md-typeset h5,
+.md-content h5 {
+  margin-top: 0.8rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.md-typeset h6,
+.md-content h6 {
+  margin-top: 0.7rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+/* Paragraphs */
+.md-typeset p,
+.md-content p {
+  margin-top: 0.35rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.76rem;
+  line-height: 1.7;
+}
+
+/* Intro paragraph under the page title */
+.md-typeset h1 + p,
+.md-content h1 + p {
+  margin-bottom: 1.25rem;
+  color: var(--qx-muted);
+  font-size: 0.79rem;
+  line-height: 1.7;
+}
+
+/* 3. Remove Heading Permalink Symbols */
+.md-typeset .headerlink,
+.md-content .headerlink {
+  display: none !important;
+}
+
+/* 4. Links */
+.md-typeset a,
+.md-content a {
+  color: var(--qx-primary);
+  text-underline-offset: 3px;
+  transition: color 180ms ease;
+}
+
+.md-typeset a:hover,
+.md-content a:hover {
+  color: var(--qx-primary-hover);
+}
+
+/* 5. Documentation Cards */
+.qx-docs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+.qx-docs-grid ul {
+  margin: 0;
+  padding: 0;
+  list-style: none !important;
+}
+
+.qx-docs-grid li {
+  list-style: none !important;
+}
+
+.qx-docs-grid li::marker,
+.qx-docs-grid li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Support common Markdown-generated card structures */
+.qx-docs-grid > ul > li,
+.qx-docs-grid .qx-card {
+  box-sizing: border-box;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--qx-border);
+  border-radius: 9px;
+  background: var(--qx-surface);
+  box-shadow: 0 2px 6px rgb(15 23 42 / 3%);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.qx-docs-grid > ul > li:hover,
+.qx-docs-grid .qx-card:hover {
+  border-color: #b8cbea;
+  background: var(--qx-surface-hover);
+  box-shadow: 0 6px 18px rgb(15 23 42 / 6%);
+  transform: translateY(-1px);
+}
+
+.qx-docs-grid strong {
+  display: block;
+  margin: 0;
+  color: #1e3558;
+  font-size: 0.86rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.qx-docs-grid > ul > li:hover strong,
+.qx-docs-grid .qx-card:hover strong {
+  color: var(--qx-primary);
+}
+
+.qx-docs-grid p {
+  margin: 0 0 0.7rem;
+  color: var(--qx-muted);
+  font-size: 0.73rem;
+  line-height: 1.65;
+}
+
+.qx-docs-grid hr {
+  height: 1px;
+  margin: 0.6rem 0;
+  border: 0;
+  background: var(--qx-border);
+}
+
+.qx-docs-grid a {
+  display: inline-block;
+  font-size: 0.73rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.qx-docs-grid a::before,
+.qx-docs-grid a::after {
+  content: none !important;
+  display: none !important;
+}
+
+.qx-docs-grid a:focus-visible {
+  outline: 2px solid var(--qx-primary);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* 6. Strategy Data Flow Diagram */
+.data-flow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1.2rem 0 1.5rem;
+  overflow-x: auto;
+  border: 1px solid var(--qx-border);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.data-flow pre {
+  margin: 0;
+  padding: 1.1rem 1.25rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #334155;
+  font-family: var(--qx-font-code);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  letter-spacing: 0;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
+  white-space: pre;
+  tab-size: 4;
+}
+
+.data-flow code {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-variant-ligatures: none;
+}
+
+/* 7. Tables */
+.md-typeset table:not([class]),
+.md-content table:not([class]) {
+  display: table;
+  width: 100%;
+  border: 1px solid var(--qx-border);
+  border-radius: 6px;
+  font-size: 0.73rem;
+}
+
+.md-typeset table:not([class]) th,
+.md-content table:not([class]) th {
+  background: #f3f6fb;
+  color: var(--qx-heading);
+  font-weight: 650;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th,
+.md-content table:not([class]) td,
+.md-content table:not([class]) th {
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--qx-border);
+  vertical-align: top;
+}
+
+/* 8. Code Blocks — exclude data-flow diagrams */
+.md-typeset pre,
+.md-content pre {
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.md-typeset pre code,
+.md-content pre code {
+  font-family: var(--qx-font-code);
+  font-size: inherit;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
+}
+
+.md-typeset :not(pre) > code,
+.md-content :not(pre) > code {
+  font-size: 0.72rem;
+}
+
+/* 9. Lists */
+.md-typeset ul,
+.md-typeset ol,
+.md-content ul,
+.md-content ol {
+  margin-top: 0.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.md-typeset li,
+.md-content li {
+  margin-bottom: 0.2rem;
+}
+
+/* 10. Responsive Layout */
+@media screen and (max-width: 700px) {
+  .qx-docs-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .md-typeset h1,
+  .md-content h1 {
+    font-size: 1.3rem;
+  }
+
+  .md-typeset h2,
+  .md-content h2 {
+    font-size: 1.02rem;
+  }
+
+  .md-typeset h3,
+  .md-content h3 {
+    font-size: 0.92rem;
+  }
+
+  .data-flow {
+    justify-content: flex-start;
+  }
+
+  .data-flow pre {
+    padding: 0.9rem;
+    font-size: 0.68rem;
+  }
+}
+
+/* 11. Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .qx-docs-grid > ul > li,
+  .qx-docs-grid .qx-card,
+  .qx-docs-grid strong,
+  .qx-docs-grid a,
+  .md-typeset a,
+  .md-content a {
+    transition: none;
+  }
+
+  .qx-docs-grid > ul > li:hover,
+  .qx-docs-grid .qx-card:hover {
+    transform: none;
+  }
+}

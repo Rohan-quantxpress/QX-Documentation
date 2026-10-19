@@ -1,0 +1,51 @@
+/* Clean professional spacing */
+.md-typeset h1, .md-typeset h2 {
+  font-weight: 600;
+}
+
+/* Code block styling */
+.md-typeset pre code {
+  font-size: 13px;
+}
+
+/* Better table spacing */
+.md-typeset table {
+  font-size: 14px;
+}
+
+/* Remove excessive width */
+.md-grid {
+  max-width: 1400px;
+}
+
+
+/* Strategy deployment diagram */
+.data-flow,
+pre:has(code) {
+  font-family: "Fira Code", "Cascadia Mono", Consolas, monospace;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
+  white-space: pre;
+  tab-size: 4;
+  overflow-x: auto;
+}
+
+/* Keep diagram characters and box borders aligned */
+.data-flow pre,
+.data-flow code {
+  font-family: "Cascadia Mono", "DejaVu Sans Mono", Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.65;
+  letter-spacing: 0;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
+  white-space: pre;
+}
+
+.md-typeset pre code {
+  font-family: "Cascadia Mono", Consolas, "DejaVu Sans Mono", monospace;
+  font-variant-ligatures: none;
+  letter-spacing: 0;
+  white-space: pre;
+  line-height: 1.6;
+}
